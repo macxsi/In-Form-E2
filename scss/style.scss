@@ -1,0 +1,210 @@
+// Variables para colores 
+$background-color-light: rgba(144, 173, 202, 0.404);
+$background-color-dark: rgb(94, 93, 93);
+$text-color-primary: rgb(23, 55, 63);
+$text-color-secondary: darkgrey;
+$highlight-color: darkolivegreen;
+$link-color: white;
+$link-hover-color: #575757;
+
+body {
+  background-color: $background-color-light;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: $background-color-dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  h1 {
+    span {
+      background-color: black;
+    }
+    @keyframes anim {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        
+    }
+    
+  }
+
+  nav {
+      a {
+      text-decoration: none;
+      color: $link-color;
+      padding: 8px 12px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $link-hover-color;
+        border-radius: 4px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        margin: 0 10px;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+nav {
+  background-color: rgba(182, 233, 238, 0.644);
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    padding: 15px;
+
+    h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    p {
+      margin: 0 0 15px;
+      color: #666;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: #3498db;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: center;
+      display: inline-block;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+}
+
+p {
+  color: $text-color-primary;
+}
+
+h1 {
+  color: $text-color-secondary;
+  text-align: left;
+  font-size: 40px;
+  margin: 30px;
+}
+
+h2 {
+  color: black;
+}
+
+h5 {
+  color: $text-color-secondary;
+  text-align: left;
+  margin: 50px;
+}
+
+.accede {
+  color: $highlight-color;
+}
+
+.block-element {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.padding-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightgray;
+  padding: 20px;
+}
+
+.border-box {
+  width: 20%;
+  height: 100px;
+  background-color: lightgray;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+// Responsive media queries
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 150px;
+    border-radius: 5px;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: anim 2s infinite;
+}
+
